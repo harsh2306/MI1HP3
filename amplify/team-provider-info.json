@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-codemirror-dev-154544-authRole",
+      "UnauthRoleArn": "arn:aws:iam::319341277564:role/amplify-codemirror-dev-154544-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::319341277564:role/amplify-codemirror-dev-154544-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-codemirror-dev-154544-deployment",
+      "UnauthRoleName": "amplify-codemirror-dev-154544-unauthRole",
+      "StackName": "amplify-codemirror-dev-154544",
+      "StackId": "arn:aws:cloudformation:us-east-1:319341277564:stack/amplify-codemirror-dev-154544/68d943d0-13de-11ed-bb41-0a6cbe9bd2bf",
+      "AmplifyAppId": "d337irm7yp8jfj"
+    }
+  }
+}
