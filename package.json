@@ -47,6 +47,5 @@
   "directories": {
     "lib": "lib"
   },
-  "main": "index.js",
   "description": ""
 }
