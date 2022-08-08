@@ -18,6 +18,7 @@ const headers = {
 
 const apiUrl = "https://api.mi1.ai/api/";
 const apiUrl_Dev = "http://127.0.0.1:5000/";
+const apiUrl_azure = "https://mi1api.azurewebsites.net";
 var dataJson = [];
 var isLineChanged = false;
 var isLineChangeNum = 1;
@@ -898,7 +899,7 @@ getSendButton.addEventListener("click", function (e) {
     };
   }
 
-  axios.post(apiUrl_Dev + "ClinicalNote", clinicalNoteBody).then((response) => {
+  axios.post(apiUrl_azure + "ClinicalNote", clinicalNoteBody).then((response) => {
     console.log(response);
     if (response.data != []) {
       if (
@@ -954,7 +955,7 @@ let clinicalreadresponsedata = "";
 
 getReadButton.addEventListener("click", function (e) {
   axios
-    .post(apiUrl_Dev + "ReadClinicalNotes", {
+    .post(apiUrl_azure + "ReadClinicalNotes", {
       MI1ClientID: MI1_Client_ID,
       patientId: document.getElementById("PatientId").innerHTML,
     })

@@ -268,12 +268,13 @@
 
                         //PatientData
                         var url = 'http://127.0.0.1:5000/PatientData';
+                        var apiUrl_azure = "https://mi1api.azurewebsites.net";
                         var data = {
                             PatientId: patientID,
                             MI1ClientID: localStorage.getItem('MI1ClientId')
                         };
                         console.log(JSON.stringify(data));
-                        fetch(url, {
+                        fetch(apiUrl_azure, {
                         method: 'POST', // or 'PUT'
                         body: JSON.stringify(data), // data can be `string` or {object}!
                         
