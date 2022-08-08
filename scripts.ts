@@ -18,7 +18,7 @@ const headers = {
 
 const apiUrl = "https://api.mi1.ai/api/";
 const apiUrl_Dev = "http://127.0.0.1:5000/";
-const apiUrl_azure = "https://mi1api.azurewebsites.net";
+const apiUrl_azure = "https://mi1api.azurewebsites.net/";
 var dataJson = [];
 var isLineChanged = false;
 var isLineChangeNum = 1;
