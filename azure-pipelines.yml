@@ -50,7 +50,7 @@ steps:
     deployToSlotOrASE: true
     ResourceGroupName: 'MI1_Development_B1_Plan'
     SlotName: 'production'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     RuntimeStack: 'NODE|16-lts'
     StartupCommand: 'npm run build'
 
