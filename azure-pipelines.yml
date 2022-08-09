@@ -15,15 +15,6 @@ steps:
     versionSpec: '16.x'
   displayName: 'Install Node.js'
 
-- task: AzureAppServiceManage@0
-  inputs:
-    azureSubscription: 'Azure for Students(36000fc5-3a82-4990-9709-6a571fb9219e)'
-    Action: 'Stop Azure App Service'
-    WebAppName: 'MI1HP3'
-    SpecifySlotOrASE: true
-    ResourceGroupName: 'MI1_Development_B1_Plan'
-    Slot: 'production'
-
 - task: Npm@1
   inputs:
     command: 'install'
@@ -41,24 +32,8 @@ steps:
     replaceExistingArchive: true
 
 
-- task: AzureRmWebAppDeployment@4
+- task: PublishBuildArtifacts@1
   inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure for Students(36000fc5-3a82-4990-9709-6a571fb9219e)'
-    appType: 'webAppLinux'
-    WebAppName: 'MI1HP3'
-    deployToSlotOrASE: true
-    ResourceGroupName: 'MI1_Development_B1_Plan'
-    SlotName: 'production'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    RuntimeStack: 'NODE|16-lts'
-    StartupCommand: 'npm run build'
-
-- task: AzureAppServiceManage@0
-  inputs:
-    azureSubscription: 'Azure for Students(36000fc5-3a82-4990-9709-6a571fb9219e)'
-    Action: 'Start Azure App Service'
-    WebAppName: 'MI1HP3'
-    SpecifySlotOrASE: true
-    ResourceGroupName: 'MI1_Development_B1_Plan'
-    Slot: 'production'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
