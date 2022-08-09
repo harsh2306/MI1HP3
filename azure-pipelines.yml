@@ -48,7 +48,7 @@ steps:
   inputs:
     buildType: 'current'
     downloadType: 'single'
-    artifactName: '$(Pipeline.Workspace)/$(Build.BuildId).zip'
+    artifactName: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     downloadPath: '$(System.ArtifactsDirectory)'
 
 
