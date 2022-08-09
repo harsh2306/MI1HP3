@@ -40,17 +40,6 @@ steps:
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
 
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    publishLocation: 'pipeline'
-- task: DownloadBuildArtifacts@1
-  inputs:
-    buildType: 'current'
-    downloadType: 'single'
-    artifactName: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    downloadPath: '$(System.ArtifactsDirectory)'
-
 
 - task: AzureRmWebAppDeployment@4
   inputs:
