@@ -5,9 +5,20 @@
 
 trigger:
 - master
+variables:
 
-pool:
-  vmImage: ubuntu-latest
+  # Azure Resource Manager connection created during pipeline creation
+  azureSubscription: '36000fc5-3a82-4990-9709-6a571fb9219e'
+  
+  # Web app name
+  webAppName: 'MI1HP3'
+  
+  # Environment name
+  environmentName: 'MI1HP3'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
 
 stages:
 - stage: Build
