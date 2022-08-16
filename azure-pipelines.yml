@@ -41,6 +41,6 @@ steps:
     deployToSlotOrASE: true
     resourceGroupName: 'MI1_Development_B1_Plan'
     slotName: 'production'
-    package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+    package: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     runtimeStack: 'NODE|16-lts'
     startUpCommand: 'npm run start'
